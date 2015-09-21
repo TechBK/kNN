@@ -13,6 +13,9 @@ def hamkhoangcach(x,z,w,colnum):
     sum_bp = sqrt(sum_bp)
     return sum_bp
 
+def hamtrongso(alpha,d):
+    return 1/(alpha+d)
+
 
 if __name__ == '__main__':
     w = [1,1,1,1,1,1,1,1]

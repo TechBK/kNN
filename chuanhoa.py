@@ -1,4 +1,4 @@
-from __future__ import division
+#from __future__ import division
 __author__ = 'techbk'
 
 from maxcol import maxcol
@@ -16,6 +16,6 @@ def chuanhoa(colnum,table,maxchuanhoa):
     return standardtable
 
 if __name__ == '__main__':
-    rownum,colnum,table = readcsv(file='prostate-training-data.csv')
-    for row in chuanhoa(rownum,colnum,table):
+    rownum,colnum,table = readcsv('prostate-training-data.csv',1)
+    for row in chuanhoa(colnum,table,0.81273):
         print(row)
