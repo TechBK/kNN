@@ -47,6 +47,8 @@ if __name__ == '__main__':
             print("tap nb cua z = ", z)
             tap_nbk = tim_tap_nb(z,traintable,w,colnum,k)
 
+            print(tap_nbk)
+
             #len_tap_nb = len(tap_nb)  len = k
             #if(len_tap_nb == 0): break
             #print("len cua tap nb: ",len_tap_nb)
@@ -72,8 +74,8 @@ if __name__ == '__main__':
             soketquadung = 0
 
             #for z,i in testtable,range(0,5):
-                #for i in range(0,5):
-                if z[-1] == listdaura[i]:
+            for i in range(0,5):
+                if testtable[i][-1] == listdaura[i]:
                     soketquadung +=1
             print("\nso ket qua dung:", soketquadung)
             print("\n danh sach dau ra",listdaura)
