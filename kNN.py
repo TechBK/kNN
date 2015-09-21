@@ -12,10 +12,11 @@ def tim_tap_nb(z,traintable,w,colnum,k):
         #if hamkhoangcach(x,z,w,colnum-1) < d: #truyen vao colnum da~ xac dinh
         d = hamkhoangcach(x,z,w,colnum-1)
         x.append(d)
-        print("phan tu x trong nb",x)
-        print("khoang cach: ",d)
+        #print("phan tu x trong nb",x)
+        #print("khoang cach: ",d)
         #tap_nb.append(y)
     tap_nb.sort(key=lambda y: y[-1]) #y[-1] lay phan tu cuoi cung
+    #print("\ntop tap_nb:", tap_nb[0])
     tap_nbk = tap_nb[0:k] #lay k phan tu dau tien
     return tap_nbk
 
@@ -44,10 +45,10 @@ if __name__ == '__main__':
     def hamdaura(k):
         for z in testtable:
             print("\n########################")
-            print("tap nb cua z = ", z)
+            print("tap nb cua z = ", z,)
             tap_nbk = tim_tap_nb(z,traintable,w,colnum,k)
 
-            print(tap_nbk)
+            print("\ntap nbk: ",tap_nbk)
 
             #len_tap_nb = len(tap_nb)  len = k
             #if(len_tap_nb == 0): break
@@ -68,25 +69,29 @@ if __name__ == '__main__':
     def ketqua():
         #for d in [0.01, 0.015, 0.05, 0.1, 0.15]:
         for k in [1, 2, 3, 4, 5]:
+            #k = 1
             print('@@@@@@@@@@@@@@@@@@@@@@@')
-            print("Voi d =", k)
+            print("Voi k =", k)
             listdaura = [daura for daura in hamdaura(k)]
             soketquadung = 0
 
+            #tinh xem so ket qua dung
             #for z,i in testtable,range(0,5):
             for i in range(0,5):
+                #print(testtable[i][-1], listdaura[i])
                 if testtable[i][-1] == listdaura[i]:
                     soketquadung +=1
-            print("\nso ket qua dung:", soketquadung)
-            print("\n danh sach dau ra",listdaura)
+            #print("\nso ket qua dung:", soketquadung)
+            #print("\n danh sach dau ra",listdaura)
 
-            yield soketquadung,k,listdaura
+            yield k,soketquadung,listdaura
 
     bien = [ket for ket in ketqua()]
 
     print("\n*****************************\nketquacuoicung:")
-    for ket in bien:
-        print("\n",ket)
+    for k,soketquadung,listdaura in bien:
+        print("\nvoi k = ",k," so ket qua dung ",soketquadung)
+        print("list dau ra\n",listdaura)
 
 
 

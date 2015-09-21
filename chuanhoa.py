@@ -11,7 +11,7 @@ def chuanhoa(colnum,table,maxchuanhoa):
         values = []
         for col in range(0,colnum-1):
             values.append(table[row][col]/maxchuanhoa[col])
-        values.append(table[row][colnum-1])
+        values.append(table[row][-1])# add gia tri cuoi
         standardtable.append(values)
     return standardtable
 
