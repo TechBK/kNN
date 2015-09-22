@@ -40,7 +40,7 @@ if __name__ == '__main__':
     w = [1,1,1,1,1,1,1,1]
     train = readcsv('prostate-training-data.csv',1)
     #print("file train: ",train)
-    test = readcsv('prostate-test-Vi-Du.csv',0)
+    test = readcsv('Nguyen-Quang-Binh-test.csv',0)
     #print("row cua test:", len(test[2]))
     #print("file test:",test)
 
@@ -80,7 +80,7 @@ if __name__ == '__main__':
         for w in ham_w(5):
 
             #for d in [0.01, 0.015, 0.05, 0.1, 0.15]:
-            for k in range(5,28):
+            for k in range(5,10):
                 #k = 1
                 #print('@@@@@@@@@@@@@@@@@@@@@@@')
                 #print("Voi k =", k)
